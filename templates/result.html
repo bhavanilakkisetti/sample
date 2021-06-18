@@ -1,0 +1,115 @@
+<html>
+<head>
+<style>
+body{
+min-heigth:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background-color:blue;
+}
+table{
+font-family:sans-serif;
+border-collapse:collapse;
+
+}
+th{
+background-color:#333;
+color:#fff;
+}
+tbody{
+background-color:#eee;
+color:#555;
+}
+th,td{
+padding: .8rem;
+font-size:1.4rem;
+}
+@media screen and (max-width: 600px){
+thead{
+display:none;
+}
+td{
+display:block;
+}
+td:first-child{
+background-color:#333;
+color:#fff;
+text-align:center;
+}
+td:nth-child(2)::before{
+content:"Company";
+}
+td:nth-child(3)::before{
+content:"Age";
+}
+td:nth-child(4)::before{
+content:"Designnation";
+}
+td:nth-child(5)::before{
+content:"Hobbies";
+}
+td{
+text-align:right;
+}
+td::before{
+float:left;
+margin-right:3rem;
+font-weight:bold;
+}
+}
+
+
+
+
+
+
+
+
+</style>
+</head>
+   <body>  
+ 
+     
+    <table>
+		<thead>
+		<tr>
+		<th colspan="4">{{d1}}</th>
+		</tr>
+		<tr>
+		
+		<th>{{d2}}</th>
+		<th>{{d3}}</th>
+		<th>{{d4}}</th>
+		<th>{{d5}}</th>
+		</tr>
+	</thead>
+		{% for d in data%}
+		<tbody>
+		<tr>
+			
+			
+		
+			
+			<td>{{ d["Subcode"]}}</td>
+		
+			
+			<td>{{ d["Subname"]}}</td>
+		
+			
+			<td>{{ d["Grade"]}}</td>
+		
+			
+			<td>{{ d["Credits"]}}</td>
+		</tr>
+		{% endfor %}
+		</tbody>
+		</table>
+
+
+
+	 
+	  
+	
+   </body>  
+</html>
