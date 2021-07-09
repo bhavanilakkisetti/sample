@@ -1,0 +1,190 @@
+
+<html>
+<head>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins',sans-serif;
+}
+body{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  background: linear-gradient(135deg, #71b7e6, #9b59b6);
+}
+.container{
+  max-width: 700px;
+  width: 20%;
+  background-color:transparent;
+  padding: 25px 60px;
+  border-radius: 5px;
+  height:380px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+}
+.container .title{
+  font-size: 25px;
+  font-weight: 500;
+  position: relative;
+}
+.container .title::before{
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 30px;
+  border-radius: 5px;
+  background: linear-gradient(135deg, #71b7e6, #9b59b6);
+}
+
+/*radio*/
+.l1{
+display:block;
+position:relative;
+padding-left:35px;
+margin-bottom:12px;
+cursor:pointer;
+font-size:16px;
+-webkit-user-select:none;
+-moz-user-select:none;
+user-select:none;
+}
+.l1 input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+  border-radius: 50%;
+}
+
+.l1:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+.l1 input:checked ~ .checkmark {
+  background-color: #2196F3;
+}
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+.l1 input:checked ~ .checkmark:after {
+  display: block;
+}
+.l1 .checkmark:after {
+ 	top: 9px;
+	left: 9px;
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background: white;
+}
+
+/*select*/
+
+select{
+font-size:1.5rem;
+padding:0em 1.5em;
+background:#4d5061;
+color:white;
+border:0;
+}
+.selectdiv{
+position:relative;
+}
+
+/*text*/
+
+.textbox{
+background:#ccc;
+border:1px solid #666;
+color:#333;
+padding:10px 10px;
+width:135px;
+outline:none;
+}
+
+input[type=submit]{
+background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 10px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius:10px;
+}
+@media screen and (max-width:600px){
+.container{
+height:400px;
+width:50%;
+}
+@media screen and (min-width: 3000px) {
+  #leftsidebar {width: 200px; float: left;}
+  #main {margin-left: 216px;}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<div class="title">LOGIN</div>
+<div class="content">
+<form action="http://localhost:5000/success" method = "POST">
+<div class="radio"
+<hgroup>
+<h3 class="card-heading">SELECT OPTION</h3>
+</hgroup>
+<label class="l1">BACKLOGS
+<input type="radio" name="r1" value="backlog">
+<span class="checkmark"></span>
+</label>
+<label class="l1">RESULT
+  <input type="radio" name="r1" value="results">
+  <span class="checkmark"></span>
+</label>
+</div>
+<div class="selectdiv">
+<hgroup>
+<h3 class="card-heading">SELECT YEAR</h3>
+</hgroup>
+  <select name="s1" id="years">
+    <option value="1-1 2021">1-1 2021</option>
+    <option value="1-2 2022">1-2 2022</option>
+	<option value="2-1 2021">2-1 2021</option>
+    <option value="2-2 2021">2-2 2021</option>
+    <option value="threeone">3-1 2021</option>
+    <option value="3-2 2021">3-2 2021</option>
+    <option value="4-1 2021">4-1 2021</option>
+    <option value="fourtwo">4-2 2022</option>
+  </select>
+  <span class="arrow"></span>
+</div>
+
+<div class="t1">
+<hgroup>
+<h3 class="card-heading">ENTER PIN</h3>
+</hgroup>
+<input type="text" class="textbox" id="name" name="name" placeholder="PIN"/>
+</div>
+<div class="s1">
+<input type="submit" value="SUBMIT">
+</div>
+
+</form>
+</div>
+</div>
+
+</body>
+</html>
